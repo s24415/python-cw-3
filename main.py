@@ -1,4 +1,5 @@
 import random
+import getpass
 
 # ZAD. 1
 
@@ -44,17 +45,16 @@ print(f"RANDOM TOUR: {tour}")
 
 # ZAD. 3
 
-rounds_quantity = input("INSERT NUMBER OF ROUNDS: ")
+rounds_quantity = int(input("INSERT NUMBER OF ROUNDS: "))
 print("CHOOSE GAME MODE:")
 game_mode = input("C -> COMPUTER | H -> HOT SEATS \n")
 
-player1_name = ""
-player2_name = ""
+player1_name = input("PLAYER1 NAME: ")
+player2_name = "COMPUTER"
 
-if game_mode.upper() == "C" or game_mode.upper() == "COMPUTER":
-    player1_name = input("PLAYER1 NAME: ")
-    player2_name = "COMPUTER"
-elif game_mode.upper() == "H" or game_mode.upper() == "HOT SEATS":
-    player1_name = input("PLAYER1 NAME: ")
+if game_mode.upper() == "H" or game_mode.upper() == "HOT SEATS":
     player2_name = input("PLAYER2 NAME: ")
 
+for i in range(int(rounds_quantity)):
+    player1_choice = getpass.getpass("PLAYER1 CHOICE: ")
+    player2_choice = getpass.getpass("PLAYER2 CHOICE: ")
